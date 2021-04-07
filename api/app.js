@@ -309,7 +309,8 @@ app.post('/users', (req, res) => {
 
     newUser.save().then(() => {
         return newUser.createSession();
-    }).then((refreshToken) => {
+    })
+    .then((refreshToken) => {
         // Session created successfully - refreshToken returned.
         // now we geneate an access auth token for the user
 
@@ -382,9 +383,6 @@ let deleteTasksFromList = (_listId) => {
         console.log("Tasks from " + _listId + " were deleted!");
     })
 }
-
-
-
 
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
